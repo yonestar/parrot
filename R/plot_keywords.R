@@ -17,6 +17,7 @@
 #' @param color A logical scalar. Color words in plot. If vector \code{color} is
 #' not provided in \code{scores}, will assign 5 colors using k-means on
 #' dimensions 1 through 10.
+#' @param kmeans An integer for the number of centers
 #'
 #' @examples
 #' \dontrun{
@@ -82,7 +83,7 @@ plot_keywords <- function(scores,
     if (color & !("color" %in% names(scores))) {
         scores$color <- factor(
             kmeans(
-                scores$word_scores[ ,2:11],
+                scores$word_scores[ ,1:2],
                 centers=2
             )$cluster
         )
