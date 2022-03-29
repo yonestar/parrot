@@ -83,7 +83,7 @@ plot_keywords <- function(scores,
         scores$color <- factor(
             kmeans(
                 scores$word_scores[ ,2:11],
-                centers=5
+                centers=2
             )$cluster
         )
     }
