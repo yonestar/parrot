@@ -97,7 +97,7 @@ plot_keywords <- function(scores,
                          ggplot2::aes(
                                       x=word_scores[above_cutoff,x_dimension],
                                       y=word_scores[above_cutoff,y_dimension],
-                                      size=word_counts[above_cutoff],##  *
+                                      size=word_counts[above_cutoff]*1.5,##  *
                                           ## sqrt(word_scores[above_cutoff, x_dimension]^2 +
                                           ##      word_scores[above_cutoff, y_dimension]^2),
                                       label=scores$vocab[above_cutoff]
